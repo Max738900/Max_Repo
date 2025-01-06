@@ -1,0 +1,136 @@
+//=====================================================================================
+// Copyright (C) 2011-2021 Macnica Inc. All Rights Reserved.
+//
+// Use in source and binary forms, with or without modification, are permitted provided
+// by agreeing to the following terms and conditions:
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//------------------------------------------------------------------------------------
+//! @file
+//! @brief  This file provides the following functions of configuration scorpius.
+//=====================================================================================
+
+//------------------------------------------------------------------------------
+// define and structures
+//------------------------------------------------------------------------------
+// defines task entry
+//#define PRI_TASK1     250
+//#define PRI_TASK2     200
+//#define PRI_TASK3     100
+//#define PRI_TASK4     100
+//#define PRI_TASK5     70
+//#define PRI_TASK6     255
+//#define PRI_TASK7     0
+
+#define PRI_TASK1     251
+#define PRI_TASK2     250
+#define PRI_TASK3     249
+#define PRI_TASK4     240
+#define PRI_TASK5     220
+#define PRI_TASK6     210
+#define PRI_TASK7     200
+#define PRI_TASK8     100
+#define PRI_TASK9     0
+#define PRI_TASK10    248
+#define PRI_TASK11    205
+
+// defines semaphore entry
+#define SEM_GVSP_STOP_INIT 1
+#define SEM_GVSP_STOP_MAX  1
+#define SEM_IGMP_INIT      1
+#define SEM_IGMP_MAX       1
+#define SEM_PTP_INIT       1
+#define SEM_PTP_MAX        1
+#define SEM_AC_EXE_INIT    1
+#define SEM_AC_EXE_MAX     1
+#define SEM_SAC_QUEUE_INIT 1
+#define SEM_SAC_QUEUE_MAX  1
+#define SEM6_INIT     1
+#define SEM6_MAX      1
+#define SEM7_INIT     1
+#define SEM7_MAX      1
+#define SEM8_INIT     1
+#define SEM8_MAX      1
+#define SEM9_INIT     1
+#define SEM9_MAX      1
+#define SEM10_INIT    1
+#define SEM10_MAX     1
+
+//------------------------------------------------------------------------------
+// internal function prototype
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+// external variables
+//------------------------------------------------------------------------------
+extern void gev_pkt_rcv_task(void);
+extern void gev_pkt_send_task(void);
+extern void gev_timer_task(void);
+extern void gev_dhcp_renew_task(void);
+extern void gev_net_pkt_task(void);
+extern void gev_pkt_resnd_task(void);
+extern void user_task_1(void);
+extern void user_task_2(void);
+extern void idle_task(void);
+extern void libptp_task(void);
+extern void gev_sch_act_task(void);
+//extern void task4(void);
+//extern void task5(void);
+//extern void task6(void);
+//extern void task7(void);
+
+//------------------------------------------------------------------------------
+// global variables
+//------------------------------------------------------------------------------
+//! task entry table
+char stack1[4096];
+char stack2[4096];
+char stack3[4096];
+char stack4[4096];
+char stack5[4096];
+char stack6[4096];
+char stack7[4096];
+char stack8[4096];
+char stack9[4096];
+char stack10[4096];
+char stack11[4096];
+
+const table_task_entry_t g_table_task_entry[SCHED_TOTAL_TASK] = {
+	{gev_pkt_rcv_task,      (void *)&stack1[sizeof(stack1)], PRI_TASK1},
+	{gev_pkt_send_task,     (void *)&stack2[sizeof(stack2)], PRI_TASK2},
+	{gev_timer_task,        (void *)&stack3[sizeof(stack3)], PRI_TASK3},
+	{gev_dhcp_renew_task,   (void *)&stack4[sizeof(stack4)], PRI_TASK4},
+	{gev_net_pkt_task,      (void *)&stack5[sizeof(stack5)], PRI_TASK5},
+	{gev_pkt_resnd_task,    (void *)&stack6[sizeof(stack6)], PRI_TASK6},
+	{user_task_1,           (void *)&stack7[sizeof(stack7)], PRI_TASK7},
+	{user_task_2,           (void *)&stack8[sizeof(stack8)], PRI_TASK8},
+	{idle_task,             (void *)&stack9[sizeof(stack9)], PRI_TASK9},
+	{libptp_task,           (void *)&stack10[sizeof(stack10)], PRI_TASK10},
+	{gev_sch_act_task,      (void *)&stack11[sizeof(stack11)], PRI_TASK11},
+};
+
+#if (SCHED_TOTAL_SEMAPHORE != 0)
+//! semaphore entry table
+const table_semaphore_entry_t g_table_semaphore_entry[SCHED_TOTAL_SEMAPHORE] = {
+	{SEM_GVSP_STOP_INIT, SEM_GVSP_STOP_MAX},
+	{SEM_IGMP_INIT,      SEM_IGMP_MAX},
+	{SEM_PTP_INIT,       SEM_PTP_MAX},
+	{SEM_AC_EXE_INIT,    SEM_AC_EXE_MAX},
+	{SEM_SAC_QUEUE_INIT, SEM_SAC_QUEUE_MAX},
+	{SEM6_MAX, SEM6_INIT},
+	{SEM7_MAX, SEM7_INIT},
+	{SEM8_MAX, SEM8_INIT},
+	{SEM9_MAX, SEM9_INIT},
+	{SEM10_MAX, SEM10_INIT},
+};
+#endif // (SCHED_TOTAL_SEMAPHORE != 0)

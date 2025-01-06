@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+<file path="hdl_sim/gev_qsys_onchip_mem.dat" type="DAT" initParamName="INIT_FILE" memoryPath="onchip_mem" />
+<file path="epcq_controller.hex" type="HEX" memoryPath="epcq_controller" />
+<file path="gev_qsys_onchip_mem.hex" type="HEX" initParamName="INIT_FILE" memoryPath="onchip_mem" />
+</simPackage>

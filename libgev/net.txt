@@ -1,0 +1,50 @@
+
+Symbol table '.symtab' contains 47 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS net.c
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000     1 OBJECT  LOCAL  DEFAULT    5 g_igmp_join_flag
+     7: 00000001     1 OBJECT  LOCAL  DEFAULT    5 g_igmp_report_wait_flag
+     8: 00000000     0 SECTION LOCAL  DEFAULT    6 
+     9: 00000380   412 FUNC    LOCAL  DEFAULT    1 send_icmp_ping_res_packet
+    10: 000007dc   540 FUNC    LOCAL  DEFAULT    1 send_igmp_packet
+    11: 000009f8   112 FUNC    LOCAL  DEFAULT    1 igmp_report_timer_handle
+    12: 00000000     0 SECTION LOCAL  DEFAULT    7 
+    13: 00000000   444 FUNC    GLOBAL DEFAULT    1 send_arp_req_packet
+    14: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memset
+    15: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_gev_engine_mng
+    16: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memcpy
+    17: 000018b4    76 FUNC    GLOBAL DEFAULT    1 big_little_transform_16bi
+    18: 00001840   116 FUNC    GLOBAL DEFAULT    1 big_little_transform_32bi
+    19: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND puts
+    20: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND send_packet_request
+    21: 000001bc   452 FUNC    GLOBAL DEFAULT    1 send_arp_rep_packet
+    22: 0000051c   704 FUNC    GLOBAL DEFAULT    1 send_ptp_packet
+    23: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_ptp_packet_send
+    24: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND get_semaphore
+    25: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_packet_send_igmp
+    26: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND put_semaphore
+    27: 00000a68   132 FUNC    GLOBAL DEFAULT    1 igmp_join
+    28: 00000aec   140 FUNC    GLOBAL DEFAULT    1 igmp_leave
+    29: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_stop
+    30: 00000b78  1424 FUNC    GLOBAL DEFAULT    1 check_packet_type
+    31: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND read_bootstrap_reg
+    32: 00001108   824 FUNC    GLOBAL DEFAULT    1 process_arp
+    33: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memcmp
+    34: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND set_event_flag
+    35: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gev_send_evt_cmd
+    36: 00001440   504 FUNC    GLOBAL DEFAULT    1 process_icmp
+    37: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gvsp_transfer_stop
+    38: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND write_bootstrap_reg
+    39: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND write_macspire_gev_ip_reg
+    40: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND __modsi3
+    41: 00001638   412 FUNC    GLOBAL DEFAULT    1 process_igmp
+    42: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND rand
+    43: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_register
+    44: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_start
+    45: 000017d4   108 FUNC    GLOBAL DEFAULT    1 set_ip_counter
+    46: 00001900    96 FUNC    GLOBAL DEFAULT    1 big_little_transform_24bi

@@ -1,0 +1,55 @@
+
+Symbol table '.symtab' contains 52 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS dhcp_client.c
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000    72 OBJECT  LOCAL  DEFAULT    4 g_dhc_state
+     6: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     7: 00000000     4 OBJECT  LOCAL  DEFAULT    5 g_xids
+     8: 00000000     0 SECTION LOCAL  DEFAULT    6 
+     9: 00000000     4 OBJECT  LOCAL  DEFAULT    6 g_dhcp_renew_retry_count
+    10: 00000000     0 SECTION LOCAL  DEFAULT    7 
+    11: 00000b58  1768 FUNC    LOCAL  DEFAULT    1 send_dhcp_discovery_packe
+    12: 000023d0   648 FUNC    LOCAL  DEFAULT    1 dhc_extract_opts
+    13: 00001240  2548 FUNC    LOCAL  DEFAULT    1 send_dhcp_request_packet
+    14: 00002658   120 FUNC    LOCAL  DEFAULT    1 renew_timeout_process
+    15: 000026d0   120 FUNC    LOCAL  DEFAULT    1 rebind_timeout_process
+    16: 00002748   120 FUNC    LOCAL  DEFAULT    1 lease_timeout_process
+    17: 00001c34  1948 FUNC    LOCAL  DEFAULT    1 send_dhcp_release_packet
+    18: 00000aac   172 FUNC    LOCAL  DEFAULT    1 dh_getlong
+    19: 00000000     0 SECTION LOCAL  DEFAULT    8 
+    20: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND __udivsi3
+    21: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND __umodsi3
+    22: 00000000  1648 FUNC    GLOBAL DEFAULT    1 dhcp_ip_configuration
+    23: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memset
+    24: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND rand
+    25: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND puts
+    26: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_packet_send
+    27: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_register
+    28: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_start
+    29: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_check
+    30: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_stop
+    31: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_net_packet_receive
+    32: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND get_receive_net_packet
+    33: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND check_packet_type
+    34: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_gev_engine_mng
+    35: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memcmp
+    36: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND big_little_transform_32bi
+    37: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND check_ip_with_arp
+    38: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND write_bootstrap_reg
+    39: 00000670   448 FUNC    GLOBAL DEFAULT    1 process_dhcp
+    40: 00000830   636 FUNC    GLOBAL DEFAULT    1 gev_dhcp_renew_task
+    41: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND wait_event_flag
+    42: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND clear_event_flag
+    43: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_packet_send_dhcp
+    44: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND read_bootstrap_reg
+    45: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gev_send_evt_cmd
+    46: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND usleep
+    47: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND establish_communication_p
+    48: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memcpy
+    49: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND big_little_transform_16bi
+    50: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND send_packet_request
+    51: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND set_event_flag

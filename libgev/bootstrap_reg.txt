@@ -1,0 +1,21 @@
+
+Symbol table '.symtab' contains 18 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS bootstrap_reg.c
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000  6264 FUNC    GLOBAL DEFAULT    1 initialize_bootstrap_regs
+     7: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_gev_engine_mng
+     8: 00001878    88 FUNC    GLOBAL DEFAULT    1 write_bootstrap_reg
+     9: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_bootstrap_manage_table
+    10: 000018d0    76 FUNC    GLOBAL DEFAULT    1 read_bootstrap_reg
+    11: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND big_little_transform_32bi
+    12: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND strlen
+    13: 0000191c   136 FUNC    GLOBAL DEFAULT    1 copy_to_bootstrap_reg
+    14: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND read_macspire_gev_ip_reg
+    15: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND BOOT_STRAP_REGISTOR_BASE
+    16: 000019a4   136 FUNC    GLOBAL DEFAULT    1 copy_from_bootstrap_reg
+    17: 00001a2c   256 FUNC    GLOBAL DEFAULT    1 copy_to_bootstrap_reg_big

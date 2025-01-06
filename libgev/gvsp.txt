@@ -1,0 +1,167 @@
+
+Symbol table '.symtab' contains 47 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS gvsp.c
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00002968   608 FUNC    LOCAL  DEFAULT    1 gvsp_transfer_pause         //done
+     6: 00000000     8 OBJECT  LOCAL  DEFAULT    5 block_id_cur.3949           
+     7: 00000008     4 OBJECT  LOCAL  DEFAULT    5 frm_read_cnt.3951
+     
+     
+     8: 00002bc8  3932 FUNC    LOCAL  DEFAULT    1 set_gvsp_leader_packet
+     
+     9: 00003b24  2256 FUNC    LOCAL  DEFAULT    1 set_gvsp_payload_packet_h
+     
+    10: 000043f4  3600 FUNC    LOCAL  DEFAULT    1 set_gvsp_trailer_packet
+    
+    11: 00002814   276 FUNC    LOCAL  DEFAULT    1 gvsp_transfer_restart       //  done
+    12: 0000000c     2 OBJECT  LOCAL  DEFAULT    5 block_id_cur.3976						//staitic object in gvsp_transfer_restart
+    13: 00000010     4 OBJECT  LOCAL  DEFAULT    5 frm_read_cnt.3978
+    14: 00000000     0 SECTION LOCAL  DEFAULT    5 
+    15: 00000000     0 SECTION LOCAL  DEFAULT    6 
+    16: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND __umodsi3                    //__umodsi3 是 GNU Compiler Collection (GCC) 中的一个内部函数
+    17: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND __udivsi3
+    
+    18: 00000000  2648 FUNC    GLOBAL DEFAULT    1 gvsp_packetresend_v2
+    19: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_gev_engine_mng
+    20: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND read_macspire_gev_ip_reg
+    21: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND big_little_transform_32bi
+    22: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND read_bootstrap_reg
+    23: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND write_macspire_gev_ip_reg
+    24: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_resend_packet_queue
+    25: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND big_little_transform_16bi
+    
+    
+    26: 00000a58  2172 FUNC    GLOBAL DEFAULT    1 gvsp_packetresend_v1x
+
+    27: 000012d4  2512 FUNC    GLOBAL DEFAULT    1 gvsp_transfer_start
+    28: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND write_bootstrap_reg
+    
+    
+    29: 0000205c   748 FUNC    GLOBAL DEFAULT    1 set_chunk_data
+    30: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND clear_event_flag
+    
+    
+    31: 00001ca4   952 FUNC    GLOBAL DEFAULT    1 gvsp_transfer_stop
+    32: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND get_semaphore
+    33: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gev_send_evt_cmd
+    34: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND wait_event_flag
+    35: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND put_semaphore
+    36: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memcpy
+    37: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND copy_data_to_macspire_32b
+
+    38: 00002348  1228 FUNC    GLOBAL DEFAULT    1 send_test_packet
+    39: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_packet_test
+    40: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memset
+    41: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND send_packet_request
+    42: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND set_event_flag
+
+    43: 00002928    32 FUNC    GLOBAL DEFAULT    1 get_gvsp_v1x_header_size
+
+    44: 00002948    32 FUNC    GLOBAL DEFAULT    1 get_gvsp_v2_header_size
+    45: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_packet_gvsp
+
+    46: 00005204   116 FUNC    GLOBAL DEFAULT    1 trigger_output_start
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+20019a00 <gvsp_transfer_restart>:
+20019a00:	defffe04 	addi	sp,sp,-8
+20019a04:	dfc00115 	stw	ra,4(sp)
+20019a08:	df000015 	stw	fp,0(sp)
+20019a0c:	d839883a 	mov	fp,sp
+
+
+20019a10:	00880334 	movhi	r2,8204
+20019a14:	10ab4d04 	addi	r2,r2,-21196      //r2 = 200BAD34    g_gev_engine_mng
+20019a18:	10801817 	ldw	r2,96(r2)					  //r2 = read word from (200BAD34 + 96)
+20019a1c:	10800343 	ldbu	r2,13(r2)         //r2 = 从内存(r2+13)中加载一个8位的无符号字节（byte）到寄存器r2中 
+20019a20:	1080005c 	xori	r2,r2,1  					//r2 = r2 ^ 1
+20019a24:	10803fcc 	andi	r2,r2,255         //r2 = r2 & 0xFF
+20019a28:	10000226 	beq	r2,zero,20019a34 <gvsp_transfer_restart+0x34>    //if(r2 == 0) goto 20019a34
+20019a2c:	00bfffc4 	movi	r2,-1                                          //r2 = -1 //error 
+20019a30:	00003306 	br	20019b00 <gvsp_transfer_restart+0x100>           //return
+
+20019a34:	00880334 	movhi	r2,8204           
+20019a38:	10ab4d04 	addi	r2,r2,-21196
+20019a3c:	10801817 	ldw	r2,96(r2)           //r2 = read word from (200BAD34 + 96)
+                                           
+20019a40:	10853017 	ldw	r2,5312(r2)         // r2 = 从内存(r2 + 5312)中加载word到寄存器r2中 
+20019a44:	108000a0 	cmpeqi	r2,r2,2         // if（r2 == 2) r2 = 1 else r2 = 0
+20019a48:	1000021e 	bne	r2,zero,20019a54 <gvsp_transfer_restart+0x54>  
+20019a4c:	00bfffc4 	movi	r2,-1
+20019a50:	00002b06 	br	20019b00 <gvsp_transfer_restart+0x100>
+
+
+20019a54:	01400044 	movi	r5,1
+20019a58:	01000704 	movi	r4,28
+20019a5c:	001d6940 	call	2001d694 <write_macspire_gev_ip_reg>       //write_macspire_gev_ip_reg(28，1)
+
+20019a60:	01400044 	movi	r5,1
+20019a64:	01000504 	movi	r4,20
+20019a68:	001d6940 	call	2001d694 <write_macspire_gev_ip_reg>      	////write_macspire_gev_ip_reg(20，1)
+
+20019a6c:	00880334 	movhi	r2,8204
+20019a70:	10ab4d04 	addi	r2,r2,-21196
+20019a74:	10801817 	ldw	r2,96(r2)																			//g_gev_engine_mng.base_addr
+
+
+20019a78:	00c00044 	movi	r3,1																				
+20019a7c:	10c53015 	stw	r3,5312(r2)																		//*(g_gev_engine_mng.base_addr + 5312) = 1   restart
+
+20019a80:	00880334 	movhi	r2,8204
+20019a84:	10ab4d04 	addi	r2,r2,-21196
+20019a88:	10801817 	ldw	r2,96(r2)																			//g_gev_engine_mng.base_addr			
+
+20019a8c:	108003c3 	ldbu	r2,15(r2)
+20019a90:	10803fcc 	andi	r2,r2,255																		//    r2 =  *(g_gev_engine_mng.base_addr + 15) & 0xFF
+
+20019a94:	1000061e 	bne	r2,zero,20019ab0 <gvsp_transfer_restart+0xb0>  // if(r2 != 0)  goto 20019ab0
+20019a98:	00880334 	movhi	r2,8204																			
+20019a9c:	10ab4d04 	addi	r2,r2,-21196
+20019aa0:	10801817 	ldw	r2,96(r2)																		//g_gev_engine_mng.base_addr	
+
+20019aa4:	10800403 	ldbu	r2,16(r2)                                
+20019aa8:	10803fcc 	andi	r2,r2,255
+20019aac:	10001326 	beq	r2,zero,20019afc <gvsp_transfer_restart+0xfc> 
+
+
+
+20019ab0:	01400104 	movi	r5,4																			//
+20019ab4:	01000084 	movi	r4,2																			//
+20019ab8:	00249680 	call	20024968 <set_event_flag>									//			set_event_flag(2,4)
+20019abc:	10000f26 	beq	r2,zero,20019afc <gvsp_transfer_restart+0xfc>   if(set_event_flag(2,4) == 0) return 0
+
+
+20019ac0:	01024d04 	movi	r4,2356
+20019ac4:	0021c100 	call	20021c10 <read_bootstrap_reg>								//
+20019ac8:	1080020c 	andi	r2,r2,8																			//r2 = read_bootstrap_reg(2356) & 8
+20019acc:	10000626 	beq	r2,zero,20019ae8 <gvsp_transfer_restart+0xe8> //if(r2 == 0) goto 20019ae8
+
+20019ad0:	00880334 	movhi	r2,8204
+20019ad4:	10ab4d04 	addi	r2,r2,-21196
+20019ad8:	10801817 	ldw	r2,96(r2)                                    //g_gev_engine_mng.base_addr		
+
+20019adc:	01640054 	movui	r5,36865                                   //
+20019ae0:	1009883a 	mov	r4,r2
+20019ae4:	0007b600 	call	20007b60 <gev_send_evt_cmd>								 //gev_send_evt_cmd(g_gev_engine_mng.base_addr, 36865)
+
+
+20019ae8:	00880334 	movhi	r2,8204
+20019aec:	10ab4d04 	addi	r2,r2,-21196
+20019af0:	10801817 	ldw	r2,96(r2)																		//g_gev_engine_mng.base_addr	
+
+20019af4:	00c00044 	movi	r3,1
+20019af8:	10c00305 	stb	r3,12(r2)                                   //*(g_gev_engine_mng.base_addr + 12) = 1
+
+20019afc:	0005883a 	mov	r2,zero
+20019b00:	e037883a 	mov	sp,fp
+20019b04:	dfc00117 	ldw	ra,4(sp)
+20019b08:	df000017 	ldw	fp,0(sp)
+20019b0c:	dec00204 	addi	sp,sp,8
+20019b10:	f800283a 	ret

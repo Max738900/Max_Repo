@@ -1,0 +1,91 @@
+
+Symbol table '.symtab' contains 56 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS macspire_gige_vision_ip_r
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000    44 FUNC    LOCAL  DEFAULT    1 ioread8
+     6: 0000002c    40 FUNC    LOCAL  DEFAULT    1 ioread32
+     7: 00000054    52 FUNC    LOCAL  DEFAULT    1 iowrite32
+     8: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     9: 00000000     4 OBJECT  LOCAL  DEFAULT    5 g_func_gev_ptp_pkt_rcv_ev
+    10: 00000088    56 FUNC    LOCAL  DEFAULT    1 ptp_pkt_rcv_event
+    11: 000002cc   908 FUNC    LOCAL  DEFAULT    1 gev_ip_irq_handler
+    12: 00000658   248 FUNC    LOCAL  DEFAULT    1 resend_wait_final_timeout
+    13: 0000078c  1700 FUNC    LOCAL  DEFAULT    1 receive_packet
+    14: 00000fb4   332 FUNC    LOCAL  DEFAULT    1 send_packet
+    15: 00000000     0 SECTION LOCAL  DEFAULT    6 
+    16: 000000c0    44 FUNC    GLOBAL DEFAULT    1 gev_set_func_ptp_pkt_rcv_
+    17: 000000ec   360 FUNC    GLOBAL DEFAULT    1 init_gige_vision_ip
+    18: 00001230    80 FUNC    GLOBAL DEFAULT    1 write_macspire_gev_ip_reg
+    19: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_gev_engine_mng
+    20: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND alt_ic_isr_register
+    21: 00000254   120 FUNC    GLOBAL DEFAULT    1 stop_gige_vision_ip
+    22: 00001100    76 FUNC    GLOBAL DEFAULT    1 read_macspire_gev_ip_reg
+    23: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND wakeup_task
+    24: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND set_event_flag
+    25: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND read_bootstrap_reg
+    26: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gev_send_evt_cmd
+    27: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_register
+    28: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_start
+    29: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_stop
+    30: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND timer_channel_unregister
+    31: 00000750    60 FUNC    GLOBAL DEFAULT    1 gev_pkt_rcv_task
+    32: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND sleep_task
+    33: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_receive_packet_queue
+    34: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND check_packet_type
+    35: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_packet_send_gvcp_discov
+    36: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND process_gvcp_discovery_cm
+    37: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_resend_packet_queue
+    38: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_receive_net_packet_queu
+    39: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_receive_ptp_packet_queu
+    40: 00000e30   328 FUNC    GLOBAL DEFAULT    1 send_packet_request
+    41: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND disable_interrupt
+    42: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND big_little_transform_16bi
+    43: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND set_ip_counter
+    44: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_send_packet_queue
+    45: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND memcpy
+    46: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_send_packet_queue_empty
+    47: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND _enable_interrupt
+    48: 00000f78    60 FUNC    GLOBAL DEFAULT    1 gev_pkt_send_task
+    49: 00001370   288 FUNC    GLOBAL DEFAULT    1 copy_data_to_macspire_32b
+    50: 0000114c    76 FUNC    GLOBAL DEFAULT    1 read_macspire_time_cap_dr
+    51: 00001198    76 FUNC    GLOBAL DEFAULT    1 read_macspire_ptp_clock_i
+    52: 000011e4    76 FUNC    GLOBAL DEFAULT    1 read_macspire_eth_tse_ip_
+    53: 00001280    80 FUNC    GLOBAL DEFAULT    1 write_macspire_time_cap_d
+    54: 000012d0    80 FUNC    GLOBAL DEFAULT    1 write_macspire_ptp_clock_
+    55: 00001320    80 FUNC    GLOBAL DEFAULT    1 write_macspire_eth_tse_ip
+    
+    
+    
+    
+    
+    
+    
+    
+    ////////////////////////////////////////////
+2001d694 <write_macspire_gev_ip_reg>:
+2001d694:	defffc04 	addi	sp,sp,-16              
+2001d698:	dfc00315 	stw	ra,12(sp)
+2001d69c:	df000215 	stw	fp,8(sp)
+2001d6a0:	df000204 	addi	fp,sp,8
+
+2001d6a4:	e13ffe15 	stw	r4,-8(fp)          //param1 = 28
+2001d6a8:	e17fff15 	stw	r5,-4(fp)          //param2 = 1
+
+2001d6ac:	00880334 	movhi	r2,8204   
+2001d6b0:	10ab4d04 	addi	r2,r2,-21196     //g_gev_engine_mng 
+2001d6b4:	10c00217 	ldw	r3,8(r2)           //g_gev_engine_mng[8]
+2001d6b8:	e0bffe17 	ldw	r2,-8(fp)          //r2 = param1
+2001d6bc:	1885883a 	add	r2,r3,r2           // r2 = g_gev_engine_mng[8] + param1
+2001d6c0:	100b883a 	mov	r5,r2              //r5 = r2    //address
+2001d6c4:	e13fff17 	ldw	r4,-4(fp)          //r4 = param2  //value
+2001d6c8:	001c4b80 	call	2001c4b8 <iowrite32>   //
+2001d6cc:	0001883a 	nop
+2001d6d0:	e037883a 	mov	sp,fp
+2001d6d4:	dfc00117 	ldw	ra,4(sp)
+2001d6d8:	df000017 	ldw	fp,0(sp)
+2001d6dc:	dec00204 	addi	sp,sp,8
+2001d6e0:	f800283a 	ret

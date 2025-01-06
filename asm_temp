@@ -1,0 +1,24 @@
+
+200a2964 g       *ABS*	00000000 _gp = 200a2964
+
+
+2000aa8c <gev_set_ext_bs_reg_num>:
+2000aa8c:	defff904 	addi	sp,sp,-28
+2000aa90:	dfc00615 	stw	ra,24(sp)
+2000aa94:	df000515 	stw	fp,20(sp)
+2000aa98:	df000504 	addi	fp,sp,20
+2000aa9c:	e13ffc15 	stw	r4,-16(fp)
+2000aaa0:	2809883a 	mov	r4,r5
+2000aaa4:	3007883a 	mov	r3,r6
+2000aaa8:	3805883a 	mov	r2,r7
+
+last_sp     
+24(sp) = ra 
+20(sp) = fp    //new fp points here :  addi	fp,sp,20
+
+
+
+
+
+r4  //stw	r4,-16(fp)
+sp   last_sp - 28   

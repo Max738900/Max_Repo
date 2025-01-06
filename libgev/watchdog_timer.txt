@@ -1,0 +1,13 @@
+
+Symbol table '.symtab' contains 10 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS watchdog_timer.c
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 0000003c    32 FUNC    LOCAL  DEFAULT    1 wd_timer_start
+     6: 0000005c    32 FUNC    LOCAL  DEFAULT    1 wd_timer_stop
+     7: 0000007c    32 FUNC    LOCAL  DEFAULT    1 wd_timer_reset
+     8: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     9: 00000000    60 FUNC    GLOBAL DEFAULT    1 watchdog_test

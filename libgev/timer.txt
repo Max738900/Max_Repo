@@ -1,0 +1,50 @@
+
+Symbol table '.symtab' contains 47 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS timer.c
+     2: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000    40 FUNC    LOCAL  DEFAULT    1 ioread32
+     6: 00000028    52 FUNC    LOCAL  DEFAULT    1 iowrite32
+     7: 0000005c    64 FUNC    LOCAL  DEFAULT    1 iobitget32
+     8: 0000009c    80 FUNC    LOCAL  DEFAULT    1 iobitset32
+     9: 000000ec    84 FUNC    LOCAL  DEFAULT    1 iobitclr32
+    10: 00000140   108 FUNC    LOCAL  DEFAULT    1 iofldset32
+    11: 00000000     0 SECTION LOCAL  DEFAULT    5 
+    12: 00000000     1 OBJECT  LOCAL  DEFAULT    5 g_irq_timer1
+    13: 00000004     4 OBJECT  LOCAL  DEFAULT    5 g_timer_base
+    14: 00000008     4 OBJECT  LOCAL  DEFAULT    5 g_timer_irq_ic
+    15: 0000000c     4 OBJECT  LOCAL  DEFAULT    5 g_timer_irq
+    16: 000001ac   104 FUNC    LOCAL  DEFAULT    1 timer1_irq_handler
+    17: 00000230   872 FUNC    LOCAL  DEFAULT    1 gev_timer_update
+    18: 00000598   108 FUNC    LOCAL  DEFAULT    1 timer_init
+    19: 00000728    80 FUNC    LOCAL  DEFAULT    1 timer_stop
+    20: 00000604   192 FUNC    LOCAL  DEFAULT    1 timer_set_parameter
+    21: 000006c4   100 FUNC    LOCAL  DEFAULT    1 timer_start
+    22: 00000000     0 SECTION LOCAL  DEFAULT    6 
+    23: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_gev_engine_mng
+    24: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gev_get_timer_task_id
+    25: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND wakeup_task
+    26: 00000214    28 FUNC    GLOBAL DEFAULT    1 gev_timer_task
+    27: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND sleep_task
+    28: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_timer_table
+    29: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND g_timer_event_ack_table
+    30: 00000df0   236 FUNC    GLOBAL DEFAULT    1 timer_event_ack_free_id
+    31: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND __udivsi3
+    32: 00000778   284 FUNC    GLOBAL DEFAULT    1 timer_channel_register
+    33: 00000894   288 FUNC    GLOBAL DEFAULT    1 timer_channel_register_fo
+    34: 000009b4   100 FUNC    GLOBAL DEFAULT    1 timer_channel_unregister
+    35: 00000a18   148 FUNC    GLOBAL DEFAULT    1 timer_channel_start
+    36: 00000aac   144 FUNC    GLOBAL DEFAULT    1 timer_channel_stop
+    37: 00000b3c   176 FUNC    GLOBAL DEFAULT    1 timer_channel_restart
+    38: 00000bec   184 FUNC    GLOBAL DEFAULT    1 timer_channel_check
+    39: 00000ca4   124 FUNC    GLOBAL DEFAULT    1 channel_timer_hw_start
+    40: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND gev_get_timer_info
+    41: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND alt_ic_isr_register
+    42: 00000d20    48 FUNC    GLOBAL DEFAULT    1 channel_timer_hw_stop
+    43: 00000d50   160 FUNC    GLOBAL DEFAULT    1 timer_event_ack_get_id
+    44: 00000edc   236 FUNC    GLOBAL DEFAULT    1 timer_event_ack_register
+    45: 00000fc8   148 FUNC    GLOBAL DEFAULT    1 timer_event_ack_start
+    46: 0000105c   144 FUNC    GLOBAL DEFAULT    1 timer_event_ack_stop

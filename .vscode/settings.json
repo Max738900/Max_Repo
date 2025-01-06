@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "alt_cache.h": "c",
+        "altera_avalon_pio_regs.h": "c",
+        "alt_types.h": "c",
+        "alt_flash.h": "c",
+        "gev_api.h": "c",
+        "gev_engine.h": "c",
+        "package_config.h": "c",
+        "scorpius.h": "c",
+        "*.entry": "c",
+        "xml_file_v20.h": "c",
+        "tse_mac_phy.h": "c",
+        "sco_common.h": "c",
+        "io.h": "c"
+    }
+}
